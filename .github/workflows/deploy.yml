@@ -30,18 +30,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Trigger redeploy via SSH
+      - name: Trigger redeploy via Portainer API
         env:
-          SSH_KEY: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_USER: ${{ secrets.VPS_USER }}
+          PORTAINER_API_TOKEN: ${{ secrets.PORTAINER_API_TOKEN }}
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          echo "--- testando alcance da porta 22 ---"
-          (echo > /dev/tcp/$VPS_HOST/22) >/dev/null 2>&1 && echo "porta 22 alcançável" || echo "porta 22 INALCANÇÁVEL"
-          echo "--- ssh-keyscan ---"
-          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
-          echo "--- conectando via ssh -v ---"
-          ssh -v -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes -o ConnectTimeout=10 "$VPS_USER@$VPS_HOST" "deploy"
+          PAYLOAD=$(jq -n --rawfile content docker-compose.yml \
+            '{stackFileContent: $content, env: [], prune: false, pullImage: true}')
+          curl -sf -X PUT \
+            -H "X-API-Key: $PORTAINER_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            "https://portainer.evainteligencia.com.br/api/stacks/55?endpointId=1" \
+            -d "$PAYLOAD"
