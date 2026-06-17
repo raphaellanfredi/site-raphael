@@ -100,8 +100,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+      {/* Scroll indicator — oculto em mobile/tablet: a seção fica mais alta
+          que a viewport com o conteúdo empilhado, então "bottom-10" (relativo
+          à seção) acaba flutuando sobre a foto em vez do rodapé da tela. */}
+      <div className="hero-scroll-indicator hidden lg:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2">
         <span className="text-[9px] uppercase tracking-[0.3em] text-brand-white/40 font-medium">
           scroll
         </span>
