@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --brand-dark: #0a0a0a;
+  --brand-accent: #1a1a2e;
+  --brand-gold: #c9a84c;
+  --brand-gold-light: #fdf6e3;
+  --brand-light-bg: #f5f5f0;
+  --brand-white: #fafafa;
+  --text-primary: #222222;
+  --text-muted: #666666;
+}
+
+@theme inline {
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-light-bg: var(--brand-light-bg);
+  --color-brand-white: var(--brand-white);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+}
+
+html {
+  /* Lenis assume o controle do scroll suave — o browser não deve interferir */
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--brand-white);
+  color: var(--text-primary);
+  font-family: var(--font-inter), Arial, sans-serif;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.label {
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-gold);
+}
+
+.divider-gold {
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* subtle grain overlay for dark hero backgrounds */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC44IiBudW1PY3RhdmVzPSIyIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
+}
+
+/* ── Performance: GPU layer hints para elementos animados ─────────
+   will-change pré-aloca compositing layer antes do primeiro frame GSAP.
+   Mantidos apenas nos elementos que realmente animam — excesso de
+   will-change desperdiça VRAM em mobile.                            */
+
+/* Hero: linhas do título (mask reveal y: 110% → 0) */
+.hero-line {
+  will-change: transform;
+}
+
+/* Hero: label e subtítulo (fade + y) */
+.hero-label,
+.hero-sub,
+.hero-cta {
+  will-change: transform, opacity;
+}
+
+/* Reveal genérico: qualquer elemento que entra com fade+y via Reveal.tsx */
+[data-reveal] {
+  will-change: transform, opacity;
+}
+
+::selection {
+  background: var(--brand-gold);
+  color: var(--brand-dark);
+}

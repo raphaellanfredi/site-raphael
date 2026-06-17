@@ -1,0 +1,91 @@
+{
+  "project": {
+    "name": "Site Oficial — Raphael Lanfredi",
+    "description": "Site pessoal de alto impacto para empreendedor serial, especialista em IA e fundador da EVA. Arquitetura narrativa baseada na Jornada do Herói com arquétipo Sábio-Criador.",
+    "stack_sugerida": {
+      "framework": "Next.js 14 com App Router",
+      "styling": "Tailwind CSS + CSS custom variables",
+      "animacoes": "Framer Motion",
+      "fontes": "Google Fonts: Playfair Display (títulos) + Inter (corpo)",
+      "deploy": "Vercel",
+      "cms_opcional": "Contentlayer ou MDX para blog/artigos futuros"
+    }
+  },
+
+  "identidade_visual": {
+    "conceito": "Executivo Criativo com História — sofisticação sem distância, autoridade sem arrogância",
+    "paleta": {
+      "brand_dark": "#0A0A0A",
+      "brand_accent": "#1A1A2E",
+      "brand_gold": "#C9A84C",
+      "brand_gold_light": "#FDF6E3",
+      "brand_light_bg": "#F5F5F0",
+      "brand_white": "#FAFAFA",
+      "text_primary": "#222222",
+      "text_muted": "#666666"
+    },
+    "tipografia": {
+      "heading_h1": "Playfair Display Bold — 64-80px — cor brand_dark",
+      "heading_h2": "Playfair Display SemiBold — 40-48px — cor brand_dark ou brand_gold",
+      "heading_h3": "Inter SemiBold — 24-28px — cor brand_accent",
+      "body": "Inter Regular — 16-18px — cor text_primary, line-height 1.8",
+      "label": "Inter Medium — 12-13px — uppercase — letter-spacing 0.15em — cor brand_gold",
+      "quote": "Playfair Display Italic — 22-28px — cor brand_gold"
+    },
+    "logo": {
+      "instrucao": "Coloque o arquivo da logo em /public/logo.svg e /public/logo-white.svg (versão clara para fundos escuros). A logo deve aparecer no header fixo e no footer. Se a logo tiver o símbolo da EVA ou elementos dourados, preserve exatamente as proporções originais.",
+      "placeholder_cor": "#C9A84C",
+      "tamanho_header": "h-10 (40px altura)",
+      "tamanho_footer": "h-8 (32px altura)"
+    },
+    "bordas_e_detalhes": {
+      "borda_gold": "2px solid #C9A84C",
+      "border_radius": "8px padrão, 0px para elementos hero e blocos full-width",
+      "divisor": "1px solid rgba(201, 168, 76, 0.3)",
+      "sombra_card": "0 4px 24px rgba(0,0,0,0.08)"
+    }
+  },
+
+  "arquetipo_e_narrativa": {
+    "arquetipo_primario": "Sábio-Criador",
+    "arquetipo_secundario": "Herói",
+    "descricao": "Raphael traduz o complexo em simples (Sábio) e constrói — produto, empresa, arte (Criador). Não é apenas um educador. É alguém com cicatrizes de batalha e resultados para mostrar. A jornada de reconstrução pessoal e profissional ativa o Herói: caiu, levantou, e agora mostra o caminho.",
+    "jornada_heroi_mapeada": {
+      "mundo_comum": "Músico, artista. Banda Mármore de Carrara. Clipe na MTV. Vida criativa, foco em palco.",
+      "chamado_aventura": "Empreende. Funda o Santo Bier. Primeira rede de beer trucks do Brasil. 48 unidades.",
+      "recusa_chamado": "No ápice do sucesso — prêmios nacionais, cobertura nacional, patrocínio do Campeonato Carioca — veio a escuridão: depressão severa e dependência ao álcool.",
+      "mentor": "A coragem de parar. A terapia. O autoconhecimento. Um ano de transição intencional.",
+      "travessia_limiar": "Outubro 2018. Primeiro contato com automação e IA. Começa do zero num setor que não conhecia.",
+      "provas_aliados_inimigos": "Funda a 2BeMotion. Treina mais de 2.000 empreendedores. MIT no Rio. Rio Innovation Week. SEBRAE.",
+      "caverna_mais_profunda": "Percebe que depender de ferramentas de terceiros tem limite. Decide construir a própria plataforma.",
+      "provacao": "Desenvolve a IA de vendas e atendimento integrada ao Claude e GPT. Anos de construção silenciosa.",
+      "recompensa": "07 de julho de 2025: nasce a EVA. Plataforma própria. O produto que prova tudo que ensina.",
+      "caminho_de_volta": "Agora visível. Construiu em silêncio. Hora de ser visto.",
+      "ressureicao": "O especialista que não é guru. O empreendedor que virou técnico. O técnico que nunca deixou de ser empreendedor.",
+      "elixir": "Tecnologia que liberta. Estratégia que escala."
+    },
+    "frase_raiz": "Tecnologia que liberta. Estratégia que escala.",
+    "frases_ancora": [
+      "Não sou professor de IA. Sou um empreendedor que a usa para construir.",
+      "Em 2018 eu larguei o que eu sabia fazer para aprender o que o mundo precisava.",
+      "A EVA não é um chatbot. É o primeiro funcionário que nunca dorme.",
+      "Falo com quem quer resultado, não com quem quer teoria.",
+      "Construí em silêncio. Agora é hora de ser visto.",
+      "IA não substitui gente. Liberta gente."
+    ],
+    "mantra_de_marca": "Construí em silêncio. Agora é hora de ser visto."
+  },
+
+  "arquitetura_do_site": {
+    "paginas": ["home", "sobre", "eva", "treinamentos", "midia", "blog", "contato"],
+    "estrutura_url": {
+      "/": "Home",
+      "/sobre": "Sobre — A Jornada",
+      "/eva": "EVA — A Plataforma",
+      "/treinamentos": "Treinamentos & Palestras",
+      "/midia": "Mídia & Prêmios",
+      "/blog": "Conteúdo",
+      "/contato": "Contato"
+    }
+  }
+}

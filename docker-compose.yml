@@ -1,0 +1,30 @@
+services:
+  site-raphael:
+    image: raphaellanfredi/site-raphael:latest
+    environment:
+      - NODE_ENV=production
+    networks:
+      - network_public
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      update_config:
+        order: start-first
+    # Sem "ports:" — o Nginx Proxy Manager acessa o container pela rede
+    # overlay "network_public" (pelo nome do serviço "site-raphael",
+    # porta 3000), sem publicar porta no host nem arriscar conflito com
+    # outros sites/stacks na mesma VPS (ex: as stacks wordpress_*).
+    # "container_name" não é usado em modo Swarm — o Docker nomeia
+    # automaticamente as réplicas do serviço.
+
+networks:
+  network_public:
+    external: true
+    # Rede overlay (scope swarm) já existente no servidor — confirmada via
+    # `docker network ls`. Presumimos que o Nginx Proxy Manager está
+    # conectado a ela (é a única rede com escopo "público"/swarm que não
+    # pertence a uma stack específica). Para confirmar 100%, rode no
+    # servidor: docker network inspect network_public
+    # e veja se o container do NPM aparece em "Containers". Se não aparecer,
+    # me diga a qual rede o NPM está conectado e eu ajusto este arquivo.
