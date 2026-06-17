@@ -38,7 +38,7 @@ const ATOS: Ato[] = [
     fotos: [
       { arquivo: "/photos/jornada/ato1-01.jpg", alt: "Banda Mármore de Carrara — cartaz de show" },
       { arquivo: "/photos/jornada/ato1-02.jpg", alt: "Raphael Lanfredi tocando guitarra no palco" },
-      { arquivo: "/photos/jornada/ato1-03.jpg", alt: "Raphael Lanfredi tocando guitarra" },
+      { arquivo: "/marmore-7.jpeg", alt: "Banda Mármore de Carrara" },
     ],
   },
   {
@@ -62,9 +62,9 @@ const ATOS: Ato[] = [
     notaEditorial:
       "Este é o coração emocional da jornada — a virada que mudou tudo.",
     fotos: [
-      { arquivo: "/photos/jornada/ato2-01.jpg", alt: "Santo Bier — matéria PEGN", fit: "contain" },
+      { arquivo: "/kombi.jpeg", alt: "Santo Bier — kombi da rede de beer trucks", fit: "contain" },
       { arquivo: "/photos/jornada/ato2-02.jpg", alt: "Santo Bier — patrocínio Campeonato Carioca com Pelé", fit: "contain" },
-      { arquivo: "/photos/jornada/ato2-03.jpg", alt: "Santo Bier — estande na feira de franquias" },
+      { arquivo: "/santo-7.png", alt: "Santo Bier" },
     ],
   },
   {
@@ -87,9 +87,9 @@ const ATOS: Ato[] = [
       "EVA lançada em 07/07/2025",
     ],
     fotos: [
+      { arquivo: "/lide-1.jpeg", alt: "Raphael Lanfredi no LIDE" },
+      { arquivo: "/entrevista-bni.png", alt: "Raphael Lanfredi em entrevista no BNI" },
       { arquivo: "/photos/jornada/ato3-01.jpg", alt: "Raphael Lanfredi" },
-      { arquivo: "/photos/jornada/ato3-02.jpg", alt: "Raphael Lanfredi" },
-      { arquivo: "/photos/jornada/ato3-03.jpg", alt: "Raphael Lanfredi — palestra de Design Thinking", imgAlign: "left" },
     ],
   },
 ];

@@ -83,7 +83,7 @@ export default function Hero() {
         {/* Foto — slide from right */}
         <div className="hero-photo relative">
           <SmartImage
-            src="/photos/raphael-hero.jpg"
+            src="/hero-7.PNG"
             alt="Raphael Lanfredi — Empreendedor e especialista em IA"
             label="Foto principal — Raphael Lanfredi"
             className="aspect-[4/5] w-full"
