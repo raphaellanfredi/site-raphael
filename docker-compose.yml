@@ -11,20 +11,23 @@ services:
         condition: any
       update_config:
         order: start-first
-    # Sem "ports:" — o Nginx Proxy Manager acessa o container pela rede
-    # overlay "network_public" (pelo nome do serviço "site-raphael",
-    # porta 3000), sem publicar porta no host nem arriscar conflito com
-    # outros sites/stacks na mesma VPS (ex: as stacks wordpress_*).
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=network_public"
+        # Cobre o domínio com e sem "www" desde o início (a stack da EVA
+        # só cobre o "www", causando 404 no domínio puro — não repetir aqui).
+        - "traefik.http.routers.site-raphael.rule=Host(`raphaellanfredi.com.br`) || Host(`www.raphaellanfredi.com.br`)"
+        - "traefik.http.routers.site-raphael.entrypoints=websecure"
+        - "traefik.http.routers.site-raphael.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.site-raphael.loadbalancer.server.port=3000"
+    # Sem "ports:" — o Traefik acessa o container pela rede overlay
+    # "network_public" diretamente, sem publicar porta no host.
     # "container_name" não é usado em modo Swarm — o Docker nomeia
     # automaticamente as réplicas do serviço.
 
 networks:
   network_public:
     external: true
-    # Rede overlay (scope swarm) já existente no servidor — confirmada via
-    # `docker network ls`. Presumimos que o Nginx Proxy Manager está
-    # conectado a ela (é a única rede com escopo "público"/swarm que não
-    # pertence a uma stack específica). Para confirmar 100%, rode no
-    # servidor: docker network inspect network_public
-    # e veja se o container do NPM aparece em "Containers". Se não aparecer,
-    # me diga a qual rede o NPM está conectado e eu ajusto este arquivo.
+    # Rede overlay (scope swarm) confirmada via `docker network inspect
+    # network_public` — o serviço traefik_traefik está conectado a ela,
+    # junto com eva_nginx e mysql_mysql.
