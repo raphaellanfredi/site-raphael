@@ -30,5 +30,10 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Trigger Portainer redeploy
-        run: curl -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
+      - name: Trigger redeploy via SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" "deploy"
