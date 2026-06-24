@@ -65,7 +65,7 @@ export default function Hero() {
           <div className="hero-sub">
             <p className="mt-8 max-w-xl text-lg text-brand-white/70">
               Empreendedor serial. Músico. Fundador do Santo Bier.
-              Especialista em IA. 20 anos de pele no jogo — não de slides.
+              Especialista em IA. 20 anos de mão na massa — não de slides.
             </p>
           </div>
 

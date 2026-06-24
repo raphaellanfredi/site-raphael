@@ -100,7 +100,7 @@ export default function JourneyTimeline() {
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
         <Reveal>
           <h2 className="font-display font-semibold text-4xl md:text-5xl text-brand-dark text-center">
-            20 anos de pele no jogo
+            20 anos de mão na massa
           </h2>
         </Reveal>
 

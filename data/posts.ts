@@ -110,7 +110,7 @@ Construir a EVA não foi uma decisão de marketing. Foi uma decisão de integrid
 
 Se eu vou falar para um empreendedor que IA é o caminho, preciso estar apostando meu tempo e dinheiro que essa afirmação é verdadeira. Preciso estar sentindo o mesmo problema que ele sente. Precisar de manutenção. De melhoria. De inovação constante.
 
-Quando você recomenda algo que você construiu, você não está mais em posição de expertise passiva. Você está dizendo: *"Eu coloquei pele no jogo. Isso aqui funciona porque eu preciso que funcione."*
+Quando você recomenda algo que você construiu, você não está mais em posição de expertise passiva. Você está dizendo: *"Eu coloquei a mão na massa. Isso aqui funciona porque eu preciso que funcione."*
 
 É uma diferença pequena. Mas muda tudo em termos de credibilidade.
 
