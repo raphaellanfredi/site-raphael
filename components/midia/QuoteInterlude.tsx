@@ -7,8 +7,8 @@ export default function QuoteInterlude() {
         <Reveal>
           <p className="font-display italic text-2xl md:text-3xl text-brand-dark leading-relaxed">
             &ldquo;Não sou mais um &lsquo;guru de IA&rsquo; que aprendeu a
-            usar ChatGPT em 2023. Sou um empreendedor com 20 anos de pele no
-            jogo.&rdquo;
+            usar ChatGPT em 2023. Sou um empreendedor com 20 anos de mão na
+            massa.&rdquo;
           </p>
         </Reveal>
       </div>
